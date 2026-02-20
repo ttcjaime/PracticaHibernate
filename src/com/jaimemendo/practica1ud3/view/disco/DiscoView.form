@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.jaimemendo.practica1ud3.view.disco.DiscoView">
   <grid id="27dc6" binding="mainPanel" layout-manager="CardLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="619" height="400"/>
+      <xy x="20" y="20" width="839" height="480"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -24,7 +24,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="7e796" class="javax.swing.JTable" binding="tableDisco">
+              <component id="546eb" class="javax.swing.JList" binding="listDisco">
                 <constraints/>
                 <properties/>
               </component>
@@ -98,7 +98,9 @@
                   </component>
                   <component id="a1ee5" class="javax.swing.JSpinner" binding="spinnerPrecio">
                     <constraints/>
-                    <properties/>
+                    <properties>
+                      <preferredSize width="80" height="30"/>
+                    </properties>
                   </component>
                 </children>
               </grid>
@@ -178,7 +180,7 @@
                       <text value="Discografica"/>
                     </properties>
                   </component>
-                  <component id="f3e02" class="javax.swing.JComboBox">
+                  <component id="f3e02" class="javax.swing.JComboBox" binding="boxDiscografica">
                     <constraints/>
                     <properties/>
                   </component>
@@ -198,7 +200,7 @@
                       <text value="Artista"/>
                     </properties>
                   </component>
-                  <component id="857e4" class="javax.swing.JComboBox" binding="comboArtistaDisco">
+                  <component id="10005" class="javax.swing.JComboBox" binding="boxArtista">
                     <constraints/>
                     <properties/>
                   </component>
@@ -218,6 +220,7 @@
               <component id="2a0a5" class="javax.swing.JButton" binding="btnAddDisco">
                 <constraints/>
                 <properties>
+                  <actionCommand value="btnAddDisco"/>
                   <background color="-9675545"/>
                   <foreground color="-923952"/>
                   <text value="AÑADIR"/>
@@ -226,6 +229,7 @@
               <component id="67b11" class="javax.swing.JButton" binding="btnBorrarDisco">
                 <constraints/>
                 <properties>
+                  <actionCommand value="btnBorrarDisco"/>
                   <background color="-9675545"/>
                   <foreground color="-923952"/>
                   <text value="BORRAR"/>
@@ -234,6 +238,7 @@
               <component id="49afe" class="javax.swing.JButton" binding="btnModificarDisco">
                 <constraints/>
                 <properties>
+                  <actionCommand value="btnUpdateDisco"/>
                   <background color="-9675545"/>
                   <foreground color="-923952"/>
                   <text value="MODIFICAR"/>

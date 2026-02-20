@@ -17,6 +17,6 @@ public class ArtistaService {
 
     public List<Artista> showAllArtista(){return artistaDAO.showAll();}
 
-    public void showOneArtista(int idArtista){artistaDAO.getOne(idArtista);}
+    public Artista showOneArtista(String name){return artistaDAO.getOne(name);}
 
 }

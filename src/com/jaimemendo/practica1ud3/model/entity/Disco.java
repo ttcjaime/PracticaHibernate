@@ -2,6 +2,7 @@ package com.jaimemendo.practica1ud3.model.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,7 +16,7 @@ public class Disco {
     private Date fechaLanzamiento;
     private Discografica discografica;
     private List<Cancion> canciones;
-    private List<Participacion> participaciones;
+    private List<Participacion> participaciones = new ArrayList<Participacion>();
 
     @Basic
     @Column(name = "nombre")
@@ -28,6 +29,7 @@ public class Disco {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -122,4 +124,11 @@ public class Disco {
     public void setParticipaciones(List<Participacion> participaciones) {
         this.participaciones = participaciones;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " | Genero: " + genero + " | Precio: " + precio + " | Fecha Lanzamiento: " + fechaLanzamiento
+                + " | Color: " + color;
+    }
+
 }

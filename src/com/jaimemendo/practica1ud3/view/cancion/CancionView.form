@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.jaimemendo.practica1ud3.view.cancion.CancionView">
   <grid id="27dc6" binding="mainPanel" layout-manager="CardLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="599" height="472"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -111,6 +111,7 @@
               <component id="35d21" class="javax.swing.JButton" binding="btnAddCancion">
                 <constraints/>
                 <properties>
+                  <actionCommand value="btnAddCancion"/>
                   <background color="-9675545"/>
                   <foreground color="-657931"/>
                   <text value="AÑADIR"/>
@@ -119,6 +120,7 @@
               <component id="7c413" class="javax.swing.JButton" binding="btnBorrarCancion">
                 <constraints/>
                 <properties>
+                  <actionCommand value="btnDeleteCancion"/>
                   <background color="-9675545"/>
                   <foreground color="-657931"/>
                   <text value="BORRAR"/>
@@ -127,6 +129,7 @@
               <component id="36b6b" class="javax.swing.JButton" binding="btnModificarCancion">
                 <constraints/>
                 <properties>
+                  <actionCommand value="btnUpdateCancion"/>
                   <background color="-9675545"/>
                   <foreground color="-657931"/>
                   <text value="MODIFICAR"/>
@@ -142,7 +145,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="b86a4" class="javax.swing.JTable" binding="tableCancion">
+              <component id="6049b" class="javax.swing.JList" binding="listCancion">
                 <constraints/>
                 <properties/>
               </component>

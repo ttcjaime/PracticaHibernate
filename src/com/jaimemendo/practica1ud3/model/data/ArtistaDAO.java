@@ -1,6 +1,7 @@
 package com.jaimemendo.practica1ud3.model.data;
 
 import com.jaimemendo.practica1ud3.model.entity.Artista;
+import com.jaimemendo.practica1ud3.model.entity.Disco;
 import com.jaimemendo.practica1ud3.model.entity.Discografica;
 import com.jaimemendo.practica1ud3.model.repository.IArtistaDAO;
 import com.jaimemendo.practica1ud3.util.HibernateUtil;
@@ -97,12 +98,16 @@ public class ArtistaDAO implements IArtistaDAO {
     }
 
     @Override
-    public Artista getOne(int idArtista) {
+    public Artista getOne(String name) {
         Session session = null;
         Artista artista = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            artista = session.get(Artista.class, idArtista);
+            artista = session.createQuery(
+                    "FROM Artista a WHERE a.nombre = :nombre",
+                    Artista.class)
+                    .setParameter("nombre", name)
+                    .uniqueResult();
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {

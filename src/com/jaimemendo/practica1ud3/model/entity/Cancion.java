@@ -11,6 +11,7 @@ public class Cancion {
     private Disco disco;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cancion")
     public int getIdCancion() {
         return idCancion;
@@ -63,5 +64,10 @@ public class Cancion {
 
     public void setDisco(Disco disco) {
         this.disco = disco;
+    }
+
+    @Override
+    public String toString() {
+        return "Titulo: " + titulo + " | Disco: " + disco.getNombre() + " | Duración: " + duracion;
     }
 }

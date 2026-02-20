@@ -14,6 +14,7 @@ public class Participacion {
     private Disco disco;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -76,5 +77,16 @@ public class Participacion {
 
     public void setDisco(Disco disco) {
         this.disco = disco;
+    }
+
+    @Override
+    public String toString() {
+        return "Participacion{" +
+                "id=" + id +
+                ", rol='" + rol + '\'' +
+                ", fechaParticipacion=" + fechaParticipacion +
+                ", artista=" + artista +
+                ", disco=" + disco +
+                '}';
     }
 }

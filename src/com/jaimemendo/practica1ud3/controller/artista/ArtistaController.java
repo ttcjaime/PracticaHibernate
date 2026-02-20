@@ -2,7 +2,6 @@ package com.jaimemendo.practica1ud3.controller.artista;
 
 import com.jaimemendo.practica1ud3.model.Modelo;
 import com.jaimemendo.practica1ud3.model.entity.Artista;
-import com.jaimemendo.practica1ud3.model.entity.Disco;
 import com.jaimemendo.practica1ud3.model.entity.Discografica;
 import com.jaimemendo.practica1ud3.util.Util;
 import com.jaimemendo.practica1ud3.view.Artista.ArtistaView;

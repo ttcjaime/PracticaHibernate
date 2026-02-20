@@ -10,6 +10,6 @@ public interface IArtistaDAO {
     boolean delete(Artista artista);
     boolean update(Artista artista);
     List<Artista> showAll();
-    Artista getOne(int idArtista);
+    Artista getOne(String name);
 
 }

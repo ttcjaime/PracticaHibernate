@@ -14,22 +14,10 @@ import java.awt.*;
 public class View extends JFrame {
      public JTabbedPane tabbedDiscografica;
      JPanel panel1;
-    JTable tableArtista;
-    JSpinner spinnerPrecio;
-    JTable tableDisco;
-    JTable tableDiscografica;
-    JSpinner spinnerDuracion;
 
     public JMenuItem itemOpciones;
     public JMenuItem itemDesconectar;
     public JMenuItem itemSalir;
-
-    DefaultTableModel dtmArtistas;
-    DefaultTableModel dtmDiscografica;
-    DefaultTableModel dtmDisco;
-
-    private SpinnerNumberModel spinnerPrecioModel;
-    private SpinnerNumberModel spinnerDuracionModel;
 
     public final DiscograficaView DISCOGRAFICA_VIEW = new DiscograficaView();
     public final CancionView CANCION_VIEW = new CancionView();
@@ -66,38 +54,6 @@ public class View extends JFrame {
         mbBar.add(menu);
         mbBar.add(Box.createHorizontalGlue());
         this.setJMenuBar(mbBar);
-    }
-
-//    private void setEnumComboBox() {
-//        for (ColoresEnum constant: ColoresEnum.values()) {
-//            boxColores.addItem(constant.getValor());
-//        }
-//        boxColores.setSelectedIndex(-1);
-//        for (Generos constant: Generos.values()) {
-//            boxGeneroDis.addItem(constant.getValor());
-//            boxGeneroArt.addItem(constant.getValor());
-//        }
-//        boxGeneroDis.setSelectedIndex(-1);
-//        boxGeneroArt.setSelectedIndex(-1);
-//    }
-
-    private void setTableModels() {
-        //librosTabla, autoresTabla, editorialesTabla
-        this.dtmArtistas=new DefaultTableModel();
-        this.tableArtista.setModel(dtmArtistas);
-
-        this.dtmDiscografica=new DefaultTableModel();
-        this.tableDiscografica.setModel(dtmDiscografica);
-
-        this.dtmDisco=new DefaultTableModel();
-        this.tableDisco.setModel(dtmDisco);
-    }
-
-    private void setSpinnerModels() {
-        spinnerPrecioModel  = new SpinnerNumberModel(1,1,500,1);
-        spinnerPrecio.setModel(spinnerPrecioModel);
-        spinnerDuracionModel  = new SpinnerNumberModel(1,1,500,1);
-        spinnerDuracion.setModel(spinnerDuracionModel);
     }
 
     private void initPanels() {
