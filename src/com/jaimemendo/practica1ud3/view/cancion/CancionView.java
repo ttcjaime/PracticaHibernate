@@ -11,9 +11,12 @@ public class CancionView {
     private JButton btnBorrarCancion;
     private JButton btnModificarCancion;
     public JPanel mainPanel;
+    private JList listDisco;
     private JList listCancion;
+    private JButton btnMostrarDisco;
 
     private DefaultListModel dlmCancion;
+    private DefaultListModel dlmDisco;
 
     public CancionView() {
         setListModel();
@@ -22,6 +25,9 @@ public class CancionView {
     private void setListModel() {
         dlmCancion = new DefaultListModel();
         listCancion.setModel(dlmCancion);
+
+        dlmDisco = new DefaultListModel();
+        listDisco.setModel(dlmDisco);
     }
 
     public int getPrecio() {
@@ -64,4 +70,17 @@ public class CancionView {
     public DefaultListModel getDlmCancion() {
         return dlmCancion;
     }
+
+    public JButton getBtnMostrarDisco() {
+        return btnMostrarDisco;
+    }
+
+    public JList getListDisco() {
+        return listDisco;
+    }
+
+    public DefaultListModel getDlmDisco() {
+        return dlmDisco;
+    }
+
 }

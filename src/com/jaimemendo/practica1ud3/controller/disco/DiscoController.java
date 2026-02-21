@@ -28,6 +28,7 @@ public class DiscoController implements ActionListener, ListSelectionListener {
 
         addActionListener(this);
         addListListener(this);
+        listDisco();
     }
 
     private void addActionListener(ActionListener listener) {

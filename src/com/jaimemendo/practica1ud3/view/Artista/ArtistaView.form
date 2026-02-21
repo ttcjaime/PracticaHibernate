@@ -45,6 +45,7 @@
                     <constraints border-constraint="West"/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="musica-de-usuario.png"/>
                       <text value="Nombre"/>
                     </properties>
                   </component>
@@ -68,6 +69,7 @@
                     <constraints border-constraint="West"/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="musica-alternativa-24.png"/>
                       <text value="Genero"/>
                     </properties>
                   </component>
@@ -88,6 +90,7 @@
                     <constraints border-constraint="West"/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="en-todo-el-mundo.png"/>
                       <text value="Pais"/>
                     </properties>
                   </component>
@@ -111,6 +114,7 @@
                     <constraints border-constraint="West"/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="disco-de-vinilo-24.png"/>
                       <text value="Discografica"/>
                     </properties>
                   </component>

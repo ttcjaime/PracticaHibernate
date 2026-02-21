@@ -24,6 +24,7 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
 
         addActionListener(this);
         addListListener(this);
+        listArtista();
     }
 
     private void addActionListener(ActionListener listener) {

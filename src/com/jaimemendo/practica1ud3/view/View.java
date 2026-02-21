@@ -13,7 +13,8 @@ import java.awt.*;
 
 public class View extends JFrame {
      public JTabbedPane tabbedDiscografica;
-     JPanel panel1;
+     public JPanel panel1;
+    public JPanel mainPanel;
 
     public JMenuItem itemOpciones;
     public JMenuItem itemDesconectar;
@@ -23,6 +24,7 @@ public class View extends JFrame {
     public final CancionView CANCION_VIEW = new CancionView();
     public final ArtistaView ARTISTA_VIEW = new ArtistaView();
     public final DiscoView DISCO_VIEW = new DiscoView();
+    public final ConnectionView CONNECTION_VIEW = new ConnectionView();
 
      public View() {
          super("MitoStore");
@@ -34,7 +36,7 @@ public class View extends JFrame {
          this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
          this.setVisible(true);
          this.setLocationRelativeTo(null);
-         initPanels();
+         initConnectionPanel();
          setMenu();
          this.pack();
      }
@@ -56,14 +58,25 @@ public class View extends JFrame {
         this.setJMenuBar(mbBar);
     }
 
-    private void initPanels() {
-        tabbedDiscografica.removeAll();
+    public void initConnectionPanel() {
+        mainPanel.removeAll();
+        mainPanel.add(CONNECTION_VIEW.mainPanel,BorderLayout.CENTER);
+        mainPanel.revalidate();
+        mainPanel.repaint();
+    }
+
+        public void initTabbed() {
+         mainPanel.removeAll();
+         tabbedDiscografica.removeAll();
+         mainPanel.add(tabbedDiscografica, BorderLayout.CENTER);
         tabbedDiscografica.addTab("Disco",DISCO_VIEW.mainPanel);
         tabbedDiscografica.addTab("Canción",CANCION_VIEW.mainPanel);
         tabbedDiscografica.addTab("Artista",ARTISTA_VIEW.mainPanel);
         tabbedDiscografica.addTab("Discografía",DISCOGRAFICA_VIEW.mainPanel);
         tabbedDiscografica.revalidate();
         tabbedDiscografica.repaint();
+            mainPanel.revalidate();
+            mainPanel.repaint();
     }
 
 }

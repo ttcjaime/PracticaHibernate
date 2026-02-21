@@ -1,8 +1,6 @@
 package com.jaimemendo.practica1ud3.model.data;
 
 import com.jaimemendo.practica1ud3.model.entity.Artista;
-import com.jaimemendo.practica1ud3.model.entity.Disco;
-import com.jaimemendo.practica1ud3.model.entity.Discografica;
 import com.jaimemendo.practica1ud3.model.repository.IArtistaDAO;
 import com.jaimemendo.practica1ud3.util.HibernateUtil;
 import org.hibernate.HibernateException;

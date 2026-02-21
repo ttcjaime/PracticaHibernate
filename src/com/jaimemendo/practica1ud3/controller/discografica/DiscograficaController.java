@@ -23,6 +23,7 @@ public class DiscograficaController implements ActionListener, ListSelectionList
 
         addActionListener(this);
         addListListener(this);
+        listDiscografica();
     }
 
     private void addActionListener(ActionListener listener) {

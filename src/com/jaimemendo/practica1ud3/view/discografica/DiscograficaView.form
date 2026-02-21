@@ -45,6 +45,7 @@
             </constraints>
             <properties>
               <foreground color="-657931"/>
+              <icon value="disco-duro.png"/>
               <text value="Nombre"/>
             </properties>
           </component>
@@ -55,6 +56,7 @@
             </constraints>
             <properties>
               <foreground color="-657931"/>
+              <icon value="en-todo-el-mundo.png"/>
               <text value="Pais"/>
             </properties>
           </component>
@@ -65,6 +67,7 @@
             </constraints>
             <properties>
               <foreground color="-657931"/>
+              <icon value="sitio-web.png"/>
               <text value="Sitio Web"/>
             </properties>
           </component>
@@ -87,6 +90,7 @@
             </constraints>
             <properties>
               <foreground color="-657931"/>
+              <icon value="correo.png"/>
               <text value="Email"/>
             </properties>
           </component>
@@ -109,6 +113,7 @@
             </constraints>
             <properties>
               <foreground color="-657931"/>
+              <icon value="telefono-inteligente.png"/>
               <text value="Telefono"/>
             </properties>
           </component>

@@ -50,6 +50,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="disco-de-vinilo-24.png"/>
                       <text value="Nombre"/>
                     </properties>
                   </component>
@@ -73,6 +74,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="musica.png"/>
                       <text value="Genero"/>
                     </properties>
                   </component>
@@ -93,6 +95,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="euro.png"/>
                       <text value="Precio"/>
                     </properties>
                   </component>
@@ -126,6 +129,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="calendario.png"/>
                       <text value="Fecha de Lanzamiento"/>
                     </properties>
                   </component>
@@ -146,6 +150,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="paleta-de-color.png"/>
                       <text value="Color"/>
                     </properties>
                   </component>
@@ -177,6 +182,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="disco-duro.png"/>
                       <text value="Discografica"/>
                     </properties>
                   </component>
@@ -197,6 +203,7 @@
                     <constraints/>
                     <properties>
                       <foreground color="-657931"/>
+                      <icon value="musica-de-usuario.png"/>
                       <text value="Artista"/>
                     </properties>
                   </component>
