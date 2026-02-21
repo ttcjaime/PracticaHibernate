@@ -104,16 +104,25 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
 
     private void updateArtista() {
         Artista artistaUpdate = (Artista)artistaView.getArtistaList().getSelectedValue();
-        artistaUpdate.setNombre(artistaView.getTxtNombreArtista().getText());
-        artistaUpdate.setPais(artistaView.getTxtPaisArtista().getText());
-        artistaUpdate.setGenero( (String) artistaView.getBoxGeneroArt().getSelectedItem());
-        artistaUpdate.setDiscografica( (Discografica) artistaView.getDiscograficaBox().getSelectedItem());
-        modelo.getArtistaService().updateArtista(artistaUpdate);
+        Discografica discografica = modelo.getDiscograficaService().showOneDiscografica((String) artistaView.getDiscograficaBox().getSelectedItem());
+        if (artistaUpdate == null) {
+            Util.showErrorAlert("Selecciona un artista a actualizar");
+        } else {
+            artistaUpdate.setNombre(artistaView.getTxtNombreArtista().getText());
+            artistaUpdate.setPais(artistaView.getTxtPaisArtista().getText());
+            artistaUpdate.setGenero( (String) artistaView.getBoxGeneroArt().getSelectedItem());
+            artistaUpdate.setDiscografica(discografica);
+            modelo.getArtistaService().updateArtista(artistaUpdate);
+        }
     }
 
     private void deleteArtista() {
         Artista artistaBorrar = (Artista)artistaView.getArtistaList().getSelectedValue();
-        modelo.getArtistaService().deleteArtista(artistaBorrar);
+        if (artistaBorrar == null) {
+            Util.showErrorAlert("Selecciona un artista a borrar");
+        } else {
+            modelo.getArtistaService().deleteArtista(artistaBorrar);
+        }
     }
 
     private boolean algunCampoVacio() {

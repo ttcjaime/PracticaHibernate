@@ -91,17 +91,26 @@ public class DiscograficaController implements ActionListener, ListSelectionList
 
     private void updateDiscografica() {
         Discografica discograficaUpdate = (Discografica)discograficaView.getDiscograficaList().getSelectedValue();
-        discograficaUpdate.setSitioWeb(discograficaView.getTxtWebDiscografica().getText());
-        discograficaUpdate.setEmailContacto(discograficaView.getTxtEmailDiscografica().getText());
-        discograficaUpdate.setNombre(discograficaView.getTxtNombreDiscografica().getText());
-        discograficaUpdate.setPais(discograficaView.getTxtPaisDiscografica().getText());
-        discograficaUpdate.setTelefonoContacto(Integer.parseInt(discograficaView.getTxtTelefonoDiscografica().getText()));
-        modelo.getDiscograficaService().updateDiscografica(discograficaUpdate);
+
+        if (discograficaUpdate == null) {
+            Util.showErrorAlert("Selecciona una discografica para actualizar");
+        } else {
+            discograficaUpdate.setSitioWeb(discograficaView.getTxtWebDiscografica().getText());
+            discograficaUpdate.setEmailContacto(discograficaView.getTxtEmailDiscografica().getText());
+            discograficaUpdate.setNombre(discograficaView.getTxtNombreDiscografica().getText());
+            discograficaUpdate.setPais(discograficaView.getTxtPaisDiscografica().getText());
+            discograficaUpdate.setTelefonoContacto(Integer.parseInt(discograficaView.getTxtTelefonoDiscografica().getText()));
+            modelo.getDiscograficaService().updateDiscografica(discograficaUpdate);
+        }
     }
 
     private void deleteDiscografica() {
         Discografica discograficaBorrar = (Discografica)discograficaView.getDiscograficaList().getSelectedValue();
-        modelo.getDiscograficaService().deleteDiscografica(discograficaBorrar);
+        if (discograficaBorrar == null) {
+            Util.showErrorAlert("Selecciona una discografica para borrar");
+        } else {
+            modelo.getDiscograficaService().deleteDiscografica(discograficaBorrar);
+        }
     }
 
     private boolean algunCampoDiscograficaVacio() {

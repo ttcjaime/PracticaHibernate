@@ -60,20 +60,22 @@ public class DiscoController implements ActionListener, ListSelectionListener {
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
-        if (e.getValueIsAdjusting()) {
-            int row = discoView.getListDisco().getSelectedIndex();
-            if (row < 0) {
+        if (!e.getValueIsAdjusting()) {
+            Disco disco = (Disco) discoView.getListDisco().getSelectedValue();
+
+            if (disco == null) {
+                currentDisco = null;
                 return;
             }
-            Disco disco = (Disco) discoView.getListDisco().getSelectedValue();
+
+            currentDisco = modelo.getDiscoService().getIdDisco(disco.getId());
+
             discoView.getTxtNombreDisco().setText(disco.getNombre());
             discoView.getBoxDiscografica().setSelectedItem(disco.getDiscografica());
             discoView.getBoxColores().setSelectedItem(disco.getColor());
             discoView.getBoxGeneroDis().setSelectedItem(disco.getGenero());
             discoView.getFechaDisco().setText(String.valueOf(discoView.getFechaDisco()));
             discoView.getSpinnerPrecio().setValue(disco.getPrecio());
-
-            currentDisco = modelo.getDiscoService().getIdDisco(disco.getId());
         }
     }
 
@@ -104,27 +106,38 @@ public class DiscoController implements ActionListener, ListSelectionListener {
 
     private void deleteDisco() {
         Disco discoDelete = (Disco) discoView.getListDisco().getSelectedValue();
-        modelo.getDiscoService().deleteDisco(discoDelete);
+        if (discoDelete == null) {
+            Util.showErrorAlert("Selecciona un disco a borrar");
+        } else {
+            modelo.getDiscoService().deleteDisco(discoDelete);
+            currentDisco = null;
+        }
     }
 
     private void update() {
-        Artista artista = modelo.getArtistaService().showOneArtista((String)discoView.getBoxArtista().getSelectedItem());
-        Discografica discografica = modelo.getDiscograficaService().showOneDiscografica((String) discoView.getBoxDiscografica().getSelectedItem());
-        currentDisco.setNombre(discoView.getTxtNombreDisco().getText());
-        currentDisco.setColor((String) discoView.getBoxColores().getSelectedItem());
-        System.out.println(Date.valueOf(discoView.getFechaDisco().getDate()));
-        currentDisco.setFechaLanzamiento(Date.valueOf(discoView.getFechaDisco().getDate()));
-        currentDisco.setDiscografica(discografica);
-        currentDisco.setGenero( (String) discoView.getBoxGeneroDis().getSelectedItem());
+        if (currentDisco == null) {
+            Util.showErrorAlert("Selecciona un disco a editar");
+        } else {
+            Artista artista = modelo.getArtistaService().showOneArtista((String)discoView.getBoxArtista().getSelectedItem());
+            Discografica discografica = modelo.getDiscograficaService().showOneDiscografica((String) discoView.getBoxDiscografica().getSelectedItem());
+            currentDisco.setNombre(discoView.getTxtNombreDisco().getText());
+            currentDisco.setColor((String) discoView.getBoxColores().getSelectedItem());
+            currentDisco.setFechaLanzamiento(Date.valueOf(discoView.getFechaDisco().getDate()));
+            currentDisco.setDiscografica(discografica);
+            currentDisco.setGenero( (String) discoView.getBoxGeneroDis().getSelectedItem());
 
-        currentDisco.getParticipaciones().clear();
-        Participacion participacion = new Participacion();
-        participacion.setArtista(artista);
-        participacion.setDisco(currentDisco);
-        System.out.println(participacion);
-        currentDisco.getParticipaciones().add(participacion);
+            currentDisco.getParticipaciones().clear();
+            Participacion participacion = new Participacion();
+            participacion.setArtista(artista);
+            participacion.setDisco(currentDisco);
+            System.out.println(participacion);
+            currentDisco.getParticipaciones().add(participacion);
 
-        modelo.getDiscoService().updateDisco(currentDisco);
+            modelo.getDiscoService().updateDisco(currentDisco);
+
+            currentDisco = null;
+            discoView.getListDisco().clearSelection();
+        }
     }
 
     private boolean algunCampoVacio() {

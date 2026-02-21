@@ -33,6 +33,7 @@ public class CancionesController implements ListSelectionListener, ActionListene
         cancionView.getBtnAddCancion().addActionListener(listener);
         cancionView.getBtnBorrarCancion().addActionListener(listener);
         cancionView.getBtnModificarCancion().addActionListener(listener);
+        cancionView.getBtnMostrarDisco().addActionListener(listener);
     }
 
     private void addListListener(ListSelectionListener listener) {
@@ -85,17 +86,25 @@ public class CancionesController implements ListSelectionListener, ActionListene
 
     private void deleteCancion() {
         Cancion cancionDelete = (Cancion) cancionView.getListCancion().getSelectedValue();
-        modelo.getCancionService().deleteCancion(cancionDelete);
+        if (cancionDelete == null) {
+            Util.showErrorAlert("Selecciona una canción para borrar");
+        } else {
+            modelo.getCancionService().deleteCancion(cancionDelete);
+        }
     }
 
     private void update() {
-        Cancion cancion = new Cancion();
-        Disco disco = modelo.getDiscoService().showOneDisco((String)cancionView.getComboDiscoCancion().getSelectedItem());
-        cancion.setTitulo(cancionView.getTxtTituloCancion().getText());
-        cancion.setDisco(disco);
-        cancion.setDuracion(cancionView.getPrecio());
+        Cancion cancionUpdate = (Cancion) cancionView.getListCancion().getSelectedValue();
+        if (cancionUpdate == null) {
+            Util.showErrorAlert("Selecciona una canción para actualizar");
+        } else {
+            Disco disco = modelo.getDiscoService().showOneDisco((String)cancionView.getComboDiscoCancion().getSelectedItem());
+            cancionUpdate.setTitulo(cancionView.getTxtTituloCancion().getText());
+            cancionUpdate.setDisco(disco);
+            cancionUpdate.setDuracion(cancionView.getPrecio());
 
-        modelo.getCancionService().updateCancion(cancion);
+            modelo.getCancionService().updateCancion(cancionUpdate);
+        }
     }
 
     private boolean algunCampoVacio() {

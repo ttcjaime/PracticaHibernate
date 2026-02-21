@@ -2,46 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="485b66ee-a00a-4d05-98ca-7c43ade603ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/calendario.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/correo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/disco-de-vinilo-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/disco-duro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/en-todo-el-mundo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/euro.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/musica-alternativa-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/musica-de-usuario.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/musica.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/paleta-de-color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/repetir.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/sitio-web.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/telefono-inteligente.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/volver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/ConnectionView.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/ConnectionView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1 UD3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1 UD3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/IndexController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/disco/DiscoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/disco/DiscoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/model/data/ArtistaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/model/data/ArtistaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/util/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/util/HibernateUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/view/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/disco/DiscoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/disco/DiscoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/data/ArtistaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/data/ArtistaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/Artista/ArtistaView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/Artista/ArtistaView.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/View.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/View.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/ConnectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/ConnectionView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/cancion/CancionView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/cancion/CancionView.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/cancion/CancionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/cancion/CancionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/disco/DiscoView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/disco/DiscoView.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/discografica/DiscograficaView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/discografica/DiscograficaView.form" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,6 +145,7 @@
       <workItem from="1771524985660" duration="5141000" />
       <workItem from="1771598421209" duration="10364000" />
       <workItem from="1771631569677" duration="530000" />
+      <workItem from="1771697377527" duration="4057000" />
     </task>
     <servers />
   </component>

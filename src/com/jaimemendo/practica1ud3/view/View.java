@@ -33,8 +33,9 @@ public class View extends JFrame {
 
      public void initFrame() {
          this.setContentPane(panel1);
-         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          this.setVisible(true);
+         this.setMinimumSize(new Dimension(1000, 600));
          this.setLocationRelativeTo(null);
          initConnectionPanel();
          setMenu();
@@ -63,6 +64,7 @@ public class View extends JFrame {
         mainPanel.add(CONNECTION_VIEW.mainPanel,BorderLayout.CENTER);
         mainPanel.revalidate();
         mainPanel.repaint();
+        this.pack();
     }
 
         public void initTabbed() {
@@ -77,6 +79,7 @@ public class View extends JFrame {
         tabbedDiscografica.repaint();
             mainPanel.revalidate();
             mainPanel.repaint();
+            this.pack();
     }
 
 }
