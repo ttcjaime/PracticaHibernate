@@ -16,9 +16,7 @@ public class View extends JFrame {
      public JPanel panel1;
     public JPanel mainPanel;
 
-    public JMenuItem itemOpciones;
     public JMenuItem itemDesconectar;
-    public JMenuItem itemSalir;
 
     public final DiscograficaView DISCOGRAFICA_VIEW = new DiscograficaView();
     public final CancionView CANCION_VIEW = new CancionView();
@@ -45,15 +43,9 @@ public class View extends JFrame {
     private void setMenu() {
         JMenuBar mbBar = new JMenuBar();
         JMenu menu = new JMenu("Archivo");
-        itemOpciones = new JMenuItem("Opciones");
-        itemOpciones.setActionCommand("Opciones");
         itemDesconectar = new JMenuItem("Conectar");
         itemDesconectar.setActionCommand("Conectar");
-        itemSalir=new JMenuItem("Salir");
-        itemSalir.setActionCommand("Salir");
-        menu.add(itemOpciones);
         menu.add(itemDesconectar);
-        menu.add(itemSalir);
         mbBar.add(menu);
         mbBar.add(Box.createHorizontalGlue());
         this.setJMenuBar(mbBar);
@@ -72,14 +64,14 @@ public class View extends JFrame {
          tabbedDiscografica.removeAll();
          mainPanel.add(tabbedDiscografica, BorderLayout.CENTER);
         tabbedDiscografica.addTab("Disco",DISCO_VIEW.mainPanel);
-        tabbedDiscografica.addTab("Canción",CANCION_VIEW.mainPanel);
+        tabbedDiscografica.addTab("Cancion",CANCION_VIEW.mainPanel);
         tabbedDiscografica.addTab("Artista",ARTISTA_VIEW.mainPanel);
-        tabbedDiscografica.addTab("Discografía",DISCOGRAFICA_VIEW.mainPanel);
+        tabbedDiscografica.addTab("Discografica",DISCOGRAFICA_VIEW.mainPanel);
         tabbedDiscografica.revalidate();
         tabbedDiscografica.repaint();
-            mainPanel.revalidate();
-            mainPanel.repaint();
-            this.pack();
+        mainPanel.revalidate();
+        mainPanel.repaint();
+        this.pack();
     }
 
 }

@@ -24,7 +24,8 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
 
         addActionListener(this);
         addListListener(this);
-        listArtista();
+        actualizarArtista();
+        actualizarDiscografica();
     }
 
     private void addActionListener(ActionListener listener) {
@@ -51,28 +52,29 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
                 deleteArtista();
                 break;
         }
-        listArtista();
+        actualizarArtista();
+        actualizarDiscografica();
+        deleteFields();
     }
 
-    public void listArtista(){
+    public void actualizarArtista(){
         List<Artista> listArtista = modelo.getArtistaService().showAllArtista();
 
         artistaView.getDlmArtista().clear();
-        artistaView.getDiscograficaBox().removeAllItems();
-
-        List<Discografica> listDiscografica =
-                modelo.getDiscograficaService().showAllDiscograficas();
 
         for (Artista artista : listArtista) {
             artistaView.getDlmArtista().addElement(artista);
         }
 
+    }
+
+    public void actualizarDiscografica() {
+        List<Discografica> listDiscografica = modelo.getDiscograficaService().showAllDiscograficas();
         artistaView.getDiscograficaBox().removeAllItems();
 
         for (Discografica d : listDiscografica) {
             artistaView.getDiscograficaBox().addItem(d.getNombre());
         }
-
     }
 
     @Override
@@ -93,7 +95,6 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
         } else {
             Artista artista = new Artista();
             Discografica discografica = modelo.getDiscograficaService().showOneDiscografica((String) artistaView.getDiscograficaBox().getSelectedItem());
-            System.out.println(discografica);
             artista.setNombre(artistaView.getTxtNombreArtista().getText());
             artista.setPais(artistaView.getTxtPaisArtista().getText());
             artista.setGenero( (String) artistaView.getBoxGeneroArt().getSelectedItem());
@@ -152,6 +153,13 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
             emptyFields += "Discografica";
         }
         return emptyFields;
+    }
+
+    private void deleteFields() {
+        artistaView.getTxtNombreArtista().setText("");
+        artistaView.getTxtPaisArtista().setText("");
+        artistaView.getBoxGeneroArt().setSelectedItem(-1);
+        artistaView.getDiscograficaBox().setSelectedItem(-1);
     }
 
 }

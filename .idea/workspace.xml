@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Practica1 UD3:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="485b66ee-a00a-4d05-98ca-7c43ade603ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/AnotherMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/IndexController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/disco/DiscoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/disco/DiscoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1 UD3/com/jaimemendo/practica1ud3/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AnotherMain.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/artista/ArtistaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/canciones/CancionesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/disco/DiscoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/disco/DiscoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/controller/discografica/DiscograficaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/service/ArtistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/service/DiscoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/service/DiscoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/service/DiscograficaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/model/service/DiscograficaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/cancion/CancionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/cancion/CancionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/disco/DiscoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/disco/DiscoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jaimemendo/practica1ud3/view/View.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +73,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -148,6 +155,7 @@
       <workItem from="1771631569677" duration="530000" />
       <workItem from="1771697377527" duration="4057000" />
       <workItem from="1771717942297" duration="4059000" />
+      <workItem from="1771765040096" duration="3918000" />
     </task>
     <servers />
   </component>

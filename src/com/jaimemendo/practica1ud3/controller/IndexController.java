@@ -83,10 +83,23 @@ public class IndexController implements ActionListener {
             int index =  view.tabbedDiscografica.getSelectedIndex();
             String titulo =  view.tabbedDiscografica.getTitleAt(index);
 
-            if (titulo.equals("Disco")) {
-                discoController.cargarArtistas();
-                discoController.cargarDiscograficas();
-                discoController.cargarDiscos();
+            switch (titulo) {
+                case "Disco":
+                    discoController.cargarArtistas();
+                    discoController.cargarDiscograficas();
+                    discoController.cargarDiscos();
+                    break;
+                case "Discografica":
+                    discograficaController.actualizarDiscografica();
+                    break;
+                case "Artista":
+                    artistaController.actualizarArtista();
+                    artistaController.actualizarDiscografica();
+                    break;
+                case "Cancion":
+                    cancionesController.actualizarCancionDisco();
+                    cancionesController.actualizarCancion();
+                    break;
             }
         });
     }

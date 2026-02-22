@@ -60,6 +60,7 @@ public class DiscoController implements ActionListener, ListSelectionListener {
         cargarDiscos();
         cargarArtistas();
         cargarDiscograficas();
+        deleteFields();
     }
 
     @Override
@@ -179,6 +180,15 @@ public class DiscoController implements ActionListener, ListSelectionListener {
             emptyFields += "Fecha \n";
         }
         return emptyFields;
+    }
+
+    private void deleteFields() {
+        discoView.getTxtNombreDisco().setText("");
+        discoView.getBoxGeneroDis().setSelectedItem(-1);
+        discoView.getBoxArtista().setSelectedItem(-1);
+        discoView.getBoxColores().setSelectedItem(-1);
+        discoView.getBoxDiscografica().setSelectedItem(-1);
+        discoView.getFechaDisco().setText("");
     }
 
     public void cargarDiscos() {

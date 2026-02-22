@@ -26,7 +26,8 @@ public class CancionesController implements ListSelectionListener, ActionListene
 
         addActionListener(this);
         addListListener(this);
-        listCancion();
+        actualizarCancion();
+        actualizarCancionDisco();
     }
 
     private void addActionListener(ActionListener listener) {
@@ -57,7 +58,8 @@ public class CancionesController implements ListSelectionListener, ActionListene
                 mostrarDisco();
                 break;
         }
-        listCancion();
+        actualizarCancion();
+        actualizarCancionDisco();
         deleteFields();
     }
 
@@ -123,22 +125,25 @@ public class CancionesController implements ListSelectionListener, ActionListene
         return emptyFields;
     }
 
-    private void listCancion() {
+    public void actualizarCancion() {
         List<Cancion> listCancion = modelo.getCancionService().showAllCancion();
 
         cancionView.getDlmCancion().clear();
-        cancionView.getComboDiscoCancion().removeAllItems();
 
         for (Cancion cancion : listCancion) {
             cancionView.getDlmCancion().addElement(cancion);
         }
 
+    }
+
+    public void actualizarCancionDisco() {
         List<Disco> listDisco = modelo.getDiscoService().showAllDisco();
+
+        cancionView.getComboDiscoCancion().removeAllItems();
 
         for (Disco d : listDisco) {
             cancionView.getComboDiscoCancion().addItem(d.getNombre());
         }
-
     }
 
     private void mostrarDisco() {
@@ -154,7 +159,7 @@ public class CancionesController implements ListSelectionListener, ActionListene
     private void deleteFields() {
         cancionView.getTxtTituloCancion().setText("");
         cancionView.getComboDiscoCancion().setSelectedItem(-1);
-        cancionView.getSpinnerDuracion().setValue(0);
+        cancionView.getSpinnerDuracion().setValue(1);
     }
 
 }

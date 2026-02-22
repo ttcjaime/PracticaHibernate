@@ -23,7 +23,7 @@ public class DiscograficaController implements ActionListener, ListSelectionList
 
         addActionListener(this);
         addListListener(this);
-        listDiscografica();
+        actualizarDiscografica();
     }
 
     private void addActionListener(ActionListener listener) {
@@ -50,10 +50,11 @@ public class DiscograficaController implements ActionListener, ListSelectionList
                 updateDiscografica();
                 break;
         }
-        listDiscografica();
+        actualizarDiscografica();
+        deleteFields();
     }
 
-    public void listDiscografica(){
+    public void actualizarDiscografica(){
             List<Discografica> listDiscografica = modelo.getDiscograficaService().showAllDiscograficas();
             discograficaView.getDlmDiscografica().clear();
 
@@ -79,13 +80,17 @@ public class DiscograficaController implements ActionListener, ListSelectionList
             Util.showErrorAlert(camposDiscograficaVacio());
             emptyFields = "";
         } else {
-            Discografica discografica = new Discografica();
-            discografica.setSitioWeb(discograficaView.getTxtWebDiscografica().getText());
-            discografica.setEmailContacto(discograficaView.getTxtEmailDiscografica().getText());
-            discografica.setNombre(discograficaView.getTxtNombreDiscografica().getText());
-            discografica.setPais(discograficaView.getTxtPaisDiscografica().getText());
-            discografica.setTelefonoContacto(Integer.parseInt(discograficaView.getTxtTelefonoDiscografica().getText()));
-            modelo.getDiscograficaService().addDiscografica(discografica);
+            try {
+                Discografica discografica = new Discografica();
+                discografica.setSitioWeb(discograficaView.getTxtWebDiscografica().getText());
+                discografica.setEmailContacto(discograficaView.getTxtEmailDiscografica().getText());
+                discografica.setNombre(discograficaView.getTxtNombreDiscografica().getText());
+                discografica.setPais(discograficaView.getTxtPaisDiscografica().getText());
+                discografica.setTelefonoContacto(Integer.parseInt(discograficaView.getTxtTelefonoDiscografica().getText()));
+                modelo.getDiscograficaService().addDiscografica(discografica);
+            } catch (NumberFormatException nfe) {
+                Util.showErrorAlert("Introduce un número de telefono correcto");
+            }
         }
     }
 
@@ -112,9 +117,7 @@ public class DiscograficaController implements ActionListener, ListSelectionList
             try {
                 modelo.getDiscograficaService().deleteDiscografica(discograficaBorrar);
             } catch (IllegalStateException e) {
-                System.out.println("aqui");
                 if ("NO_SE_PUEDE_ELIMINAR".equals(e.getMessage())) {
-                    System.out.println("aqui");
                     Util.showErrorAlert("Esta discografica esta relacionada con una o varios artistas y discos");
                 }
             }
@@ -145,6 +148,14 @@ public class DiscograficaController implements ActionListener, ListSelectionList
             emptyFields += "Web";
         }
         return emptyFields;
+    }
+
+    private void deleteFields() {
+        discograficaView.getTxtEmailDiscografica().setText("");
+        discograficaView.getTxtPaisDiscografica().setText("");
+        discograficaView.getTxtTelefonoDiscografica().setText("");
+        discograficaView.getTxtWebDiscografica().setText("");
+        discograficaView.getTxtNombreDiscografica().setText("");
     }
 
 }
