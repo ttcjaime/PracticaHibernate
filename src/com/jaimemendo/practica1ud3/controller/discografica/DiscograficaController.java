@@ -109,7 +109,15 @@ public class DiscograficaController implements ActionListener, ListSelectionList
         if (discograficaBorrar == null) {
             Util.showErrorAlert("Selecciona una discografica para borrar");
         } else {
-            modelo.getDiscograficaService().deleteDiscografica(discograficaBorrar);
+            try {
+                modelo.getDiscograficaService().deleteDiscografica(discograficaBorrar);
+            } catch (IllegalStateException e) {
+                System.out.println("aqui");
+                if ("NO_SE_PUEDE_ELIMINAR".equals(e.getMessage())) {
+                    System.out.println("aqui");
+                    Util.showErrorAlert("Esta discografica esta relacionada con una o varios artistas y discos");
+                }
+            }
         }
     }
 

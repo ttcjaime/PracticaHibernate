@@ -2,6 +2,9 @@ package com.jaimemendo.practica1ud3.model.service;
 
 import com.jaimemendo.practica1ud3.model.data.DiscoDAO;
 import com.jaimemendo.practica1ud3.model.entity.Disco;
+import org.hibernate.exception.ConstraintViolationException;
+
+import javax.persistence.PersistenceException;
 import java.util.List;
 
 public class DiscoService {
@@ -13,7 +16,14 @@ public class DiscoService {
     }
 
     public void deleteDisco(Disco disco) {
-        discoDao.delete(disco);
+        try {
+            discoDao.delete(disco);
+        } catch (PersistenceException e) {
+            if (e.getCause() instanceof ConstraintViolationException) {
+                throw new IllegalStateException("NO_SE_PUEDE_ELIMINAR");
+            }
+            throw e;
+        }
     }
 
     public void updateDisco(Disco disco) {

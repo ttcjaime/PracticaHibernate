@@ -8,6 +8,9 @@ import com.jaimemendo.practica1ud3.model.Modelo;
 import com.jaimemendo.practica1ud3.util.HibernateUtil;
 import com.jaimemendo.practica1ud3.util.Util;
 import com.jaimemendo.practica1ud3.view.View;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -59,6 +62,8 @@ public class IndexController implements ActionListener {
             this.discoController = new DiscoController(model, view.DISCO_VIEW);
             this.cancionesController = new CancionesController(model, view.CANCION_VIEW);
 
+            changeListener();
+
         }
     }
 
@@ -73,4 +78,16 @@ public class IndexController implements ActionListener {
         }
     }
 
+    public void changeListener() {
+        view.tabbedDiscografica.addChangeListener(e -> {
+            int index =  view.tabbedDiscografica.getSelectedIndex();
+            String titulo =  view.tabbedDiscografica.getTitleAt(index);
+
+            if (titulo.equals("Disco")) {
+                discoController.cargarArtistas();
+                discoController.cargarDiscograficas();
+                discoController.cargarDiscos();
+            }
+        });
+    }
 }

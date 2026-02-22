@@ -28,7 +28,9 @@ public class DiscoController implements ActionListener, ListSelectionListener {
 
         addActionListener(this);
         addListListener(this);
-        listDisco();
+        cargarDiscos();
+        cargarArtistas();
+        cargarDiscograficas();
     }
 
     private void addActionListener(ActionListener listener) {
@@ -55,12 +57,14 @@ public class DiscoController implements ActionListener, ListSelectionListener {
                 update();
                 break;
         }
-        listDisco();
+        cargarDiscos();
+        cargarArtistas();
+        cargarDiscograficas();
     }
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
-        if (!e.getValueIsAdjusting()) {
+        if (e.getValueIsAdjusting()) {
             Disco disco = (Disco) discoView.getListDisco().getSelectedValue();
 
             if (disco == null) {
@@ -92,6 +96,7 @@ public class DiscoController implements ActionListener, ListSelectionListener {
             disco.setFechaLanzamiento(Date.valueOf(discoView.getFechaDisco().getDate()));
             disco.setDiscografica(discografica);
             disco.setGenero( (String) discoView.getBoxGeneroDis().getSelectedItem());
+            disco.setPrecio(discoView.getPrecio());
 
             Participacion participacion = new Participacion();
             participacion.setArtista(artista);
@@ -105,13 +110,19 @@ public class DiscoController implements ActionListener, ListSelectionListener {
     }
 
     private void deleteDisco() {
-        Disco discoDelete = (Disco) discoView.getListDisco().getSelectedValue();
-        if (discoDelete == null) {
-            Util.showErrorAlert("Selecciona un disco a borrar");
-        } else {
-            modelo.getDiscoService().deleteDisco(discoDelete);
-            currentDisco = null;
-        }
+            Disco discoDelete = (Disco) discoView.getListDisco().getSelectedValue();
+            if (discoDelete == null) {
+                Util.showErrorAlert("Selecciona un disco a borrar");
+            } else {
+                try {
+                    modelo.getDiscoService().deleteDisco(discoDelete);
+                    currentDisco = null;
+                } catch (IllegalStateException e) {
+                    if ("NO_SE_PUEDE_ELIMINAR".equals(e.getMessage())) {
+                        Util.showErrorAlert("Este disco esta relacionado con una o varias canciones");
+                    }
+                }
+            }
     }
 
     private void update() {
@@ -125,6 +136,7 @@ public class DiscoController implements ActionListener, ListSelectionListener {
             currentDisco.setFechaLanzamiento(Date.valueOf(discoView.getFechaDisco().getDate()));
             currentDisco.setDiscografica(discografica);
             currentDisco.setGenero( (String) discoView.getBoxGeneroDis().getSelectedItem());
+            currentDisco.setPrecio(discoView.getPrecio());
 
             currentDisco.getParticipaciones().clear();
             Participacion participacion = new Participacion();
@@ -169,33 +181,33 @@ public class DiscoController implements ActionListener, ListSelectionListener {
         return emptyFields;
     }
 
-    public void listDisco(){
+    public void cargarDiscos() {
         List<Disco> listDisco = modelo.getDiscoService().showAllDisco();
-
         discoView.getDlmDisco().clear();
-        discoView.getBoxDiscografica().removeAllItems();
-        discoView.getBoxArtista().removeAllItems();
-
-        List<Discografica> listDiscografica =
-                modelo.getDiscograficaService().showAllDiscograficas();
-
-        List<Artista> listArtista = modelo.getArtistaService().showAllArtista();
 
         for (Disco disco : listDisco) {
             discoView.getDlmDisco().addElement(disco);
         }
+    }
 
-        discoView.getBoxDiscografica().removeAllItems();
+    public void cargarArtistas() {
         discoView.getBoxArtista().removeAllItems();
+
+        List<Artista> listArtista = modelo.getArtistaService().showAllArtista();
+        for (Artista a : listArtista) {
+            discoView.getBoxArtista().addItem(a.getNombre());
+        }
+    }
+
+    public void cargarDiscograficas() {
+        discoView.getBoxDiscografica().removeAllItems();
+
+        List<Discografica> listDiscografica =
+                modelo.getDiscograficaService().showAllDiscograficas();
 
         for (Discografica d : listDiscografica) {
             discoView.getBoxDiscografica().addItem(d.getNombre());
         }
-
-        for (Artista a : listArtista) {
-            discoView.getBoxArtista().addItem(a.getNombre());
-        }
-
     }
 
 }

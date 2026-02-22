@@ -99,6 +99,7 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
             artista.setGenero( (String) artistaView.getBoxGeneroArt().getSelectedItem());
             artista.setDiscografica(discografica);
             modelo.getArtistaService().addArtista(artista);
+            modelo.getDiscoService().showAllDisco();
         }
     }
 
@@ -121,7 +122,13 @@ public class ArtistaController implements ActionListener, ListSelectionListener 
         if (artistaBorrar == null) {
             Util.showErrorAlert("Selecciona un artista a borrar");
         } else {
-            modelo.getArtistaService().deleteArtista(artistaBorrar);
+            try {
+                modelo.getArtistaService().deleteArtista(artistaBorrar);
+            } catch (IllegalStateException e) {
+                if ("NO_SE_PUEDE_ELIMINAR".equals(e.getMessage())) {
+                    Util.showErrorAlert("Este artista esta relacionado con uno o varias discos");
+                }
+            }
         }
     }
 

@@ -18,8 +18,15 @@ public class CancionView {
     private DefaultListModel dlmCancion;
     private DefaultListModel dlmDisco;
 
+    private SpinnerNumberModel spinnerDuracionModel;
+
     public CancionView() {
+        initComponents();
+    }
+
+    private void initComponents() {
         setListModel();
+        setSpinnerModels();
     }
 
     private void setListModel() {
@@ -28,6 +35,11 @@ public class CancionView {
 
         dlmDisco = new DefaultListModel();
         listDisco.setModel(dlmDisco);
+    }
+
+    private void setSpinnerModels() {
+        spinnerDuracionModel = new SpinnerNumberModel(1, 1, 500, 1);
+        spinnerDuracion.setModel(spinnerDuracionModel);
     }
 
     public int getPrecio() {

@@ -68,6 +68,15 @@ public class DiscoView {
         spinnerPrecio.setModel(spinnerPrecioModel);
     }
 
+    public int getPrecio() {
+        Object value = spinnerPrecio.getValue();
+        if (value instanceof Number) {
+            return ((Number) value).intValue();
+        } else {
+            return 0; // o lanzar una excepción
+        }
+    }
+
     public JTextField getTxtNombreDisco() {
         return txtNombreDisco;
     }
